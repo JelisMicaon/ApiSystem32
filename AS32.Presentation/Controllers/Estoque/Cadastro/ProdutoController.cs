@@ -19,16 +19,12 @@ namespace AS32.Presentation.Controllers.Estoque.Cadastro
 
         #region Métodos Publicos
         [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            return new JsonResult(true);
-        }
+        public async Task<IActionResult> GetAll()
+            => new JsonResult(_contexto.GetAll());
 
         [HttpPost]
         public async Task<IActionResult> Add()
-        {
-            return new JsonResult(true);
-        }
+            => new JsonResult(_contexto.Add());
         #endregion Métodos Publicos
     }
 }

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Service\" />
+    <ProjectReference Include="..\AS32.Application.Dto\AS32.Application.Dto.csproj" />
   </ItemGroup>
 
 </Project>
