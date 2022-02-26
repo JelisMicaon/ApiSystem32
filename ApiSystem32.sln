@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Infrastructure.Data", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Infrastructure.Repository", "AS32.Infrastructure.Repository\AS32.Infrastructure.Repository.csproj", "{084599FE-E702-4F78-B03E-CCF8C153F72C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Infrastructure.Ioc", "AS32.Infrastructure.Ioc\AS32.Infrastructure.Ioc.csproj", "{C3F966EA-1456-4418-948A-387EDFB97887}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{084599FE-E702-4F78-B03E-CCF8C153F72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{084599FE-E702-4F78-B03E-CCF8C153F72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{084599FE-E702-4F78-B03E-CCF8C153F72C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F966EA-1456-4418-948A-387EDFB97887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F966EA-1456-4418-948A-387EDFB97887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F966EA-1456-4418-948A-387EDFB97887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F966EA-1456-4418-948A-387EDFB97887}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{3E55030E-4A0C-429A-B477-F534E7361CF1} = {F26E32F8-865F-4788-9BA6-01D7506C2CD2}
 		{C0D9DC68-E77C-4821-BC5D-253540866661} = {99A85865-13CD-49C5-8B97-F164A80A9E04}
 		{084599FE-E702-4F78-B03E-CCF8C153F72C} = {99A85865-13CD-49C5-8B97-F164A80A9E04}
+		{C3F966EA-1456-4418-948A-387EDFB97887} = {249BD4F9-0C01-4119-A8AA-9BA85DE3719B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EAF06112-949C-430C-9460-799421B28AF7}
