@@ -5,11 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AS32.Application\AS32.Application.csproj" />
+    <ProjectReference Include="..\AS32.Infrastructure.Ioc\AS32.Infrastructure.Ioc.csproj" />
   </ItemGroup>
 
 </Project>

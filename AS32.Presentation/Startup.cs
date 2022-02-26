@@ -1,3 +1,5 @@
+using AS32.Infrastructure.Ioc;
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -39,6 +41,9 @@ namespace AS32.Presentation
             app.UseAuthorization();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+            => builder.RegisterModule(new InfrastructureConfigureIoc());
         #endregion Métodos Publicos
     }
 }
