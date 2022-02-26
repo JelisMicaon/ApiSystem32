@@ -22,7 +22,7 @@ namespace AS32.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo { Title = "AS32.Presentation", Version = "v1" }));
+            services.AddSwaggerGen(c => c.SwaggerDoc(Configuration["VersionApplication"], new OpenApiInfo { Title = Configuration["TitleApplication"], Version = Configuration["VersionApplication"] }));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -31,7 +31,7 @@ namespace AS32.Presentation
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AS32.Presentation v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint($"/swagger/{Configuration["VersionApplication"]}/swagger.json", Configuration["TitleApplication"]));
             }
 
             app.UseHttpsRedirection();

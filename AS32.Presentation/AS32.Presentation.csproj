@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\AS32.Application\AS32.Application.csproj" />
   </ItemGroup>
 
 </Project>
