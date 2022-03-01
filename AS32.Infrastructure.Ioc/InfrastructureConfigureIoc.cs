@@ -4,6 +4,12 @@ using AS32.Application.Interfaces.Financeiro.Cadastro;
 using AS32.Application.Service.Estoque.Cadastro;
 using AS32.Application.Service.Faturamento.Cadastro;
 using AS32.Application.Service.Financeiro.Cadastro;
+using AS32.Domain.Core.Interfaces.Services.Estoque.Cadastro;
+using AS32.Domain.Core.Interfaces.Services.Faturamento.Cadastro;
+using AS32.Domain.Core.Interfaces.Services.Financeiro.Cadastro;
+using AS32.Domain.Services.Services.Estoque.Cadastro;
+using AS32.Domain.Services.Services.Faturamento.Cadastro;
+using AS32.Domain.Services.Services.Financeiro.Cadastro;
 using Autofac;
 
 namespace AS32.Infrastructure.Ioc
@@ -21,6 +27,10 @@ namespace AS32.Infrastructure.Ioc
             builder.RegisterType<ApplicationServiceProduto>().As<IApplicationServiceProduto>();
             builder.RegisterType<ApplicationServiceEntidade>().As<IApplicationServiceEntidade>();
             builder.RegisterType<ApplicationServiceFormaPagamento>().As<IApplicationServiceFormaPagamento>();
+
+            builder.RegisterType<ServiceProduto>().As<IServiceProduto>();
+            builder.RegisterType<ServiceEntidade>().As<IServiceEntidade>();
+            builder.RegisterType<ServiceFormaPagamento>().As<IServiceFormaPagamento>();
         }
         #endregion Métodos Privados
     }
