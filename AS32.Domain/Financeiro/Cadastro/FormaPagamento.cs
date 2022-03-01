@@ -1,5 +1,7 @@
-﻿namespace AS32.Domain.Financeiro.Cadastro
+﻿using AS32.Domain.Base;
+
+namespace AS32.Domain.Financeiro.Cadastro
 {
-    public class FormaPagamento
+    public class FormaPagamento : EntityBase
     { }
 }

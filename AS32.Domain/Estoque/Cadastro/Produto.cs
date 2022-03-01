@@ -1,5 +1,7 @@
-﻿namespace AS32.Domain.Estoque.Cadastro
+﻿using AS32.Domain.Base;
+
+namespace AS32.Domain.Estoque.Cadastro
 {
-    public class Produto
+    public class Produto : EntityBase
     { }
 }
