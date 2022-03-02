@@ -15,23 +15,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - Ioc", "4.2 - Ioc", "{249BD4F9-0C01-4119-A8AA-9BA85DE3719B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Presentation", "AS32.Presentation\AS32.Presentation.csproj", "{77D97813-5E07-4F9F-B8BA-1CD5CE13DE9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS32.Presentation", "AS32.Presentation\AS32.Presentation.csproj", "{77D97813-5E07-4F9F-B8BA-1CD5CE13DE9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Application", "AS32.Application\AS32.Application.csproj", "{097933CE-D859-430D-AC65-D81D744EB3B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS32.Application", "AS32.Application\AS32.Application.csproj", "{097933CE-D859-430D-AC65-D81D744EB3B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Application.Dto", "AS32.Application.Dto\AS32.Application.Dto.csproj", "{349ACD57-442C-4CD2-9C56-C873C0395CD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS32.Application.Dto", "AS32.Application.Dto\AS32.Application.Dto.csproj", "{349ACD57-442C-4CD2-9C56-C873C0395CD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Domain", "AS32.Domain\AS32.Domain.csproj", "{09CFED62-1CF8-43AA-A834-B985D0AE8546}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS32.Domain", "AS32.Domain\AS32.Domain.csproj", "{09CFED62-1CF8-43AA-A834-B985D0AE8546}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Domain.Core", "AS32.Domain.Core\AS32.Domain.Core.csproj", "{2351989F-6989-48C9-A64D-3D07D94DFE3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS32.Domain.Core", "AS32.Domain.Core\AS32.Domain.Core.csproj", "{2351989F-6989-48C9-A64D-3D07D94DFE3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Domain.Services", "AS32.Domain.Services\AS32.Domain.Services.csproj", "{3E55030E-4A0C-429A-B477-F534E7361CF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS32.Domain.Services", "AS32.Domain.Services\AS32.Domain.Services.csproj", "{3E55030E-4A0C-429A-B477-F534E7361CF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Infrastructure.Data", "AS32.Infrastructure.Data\AS32.Infrastructure.Data.csproj", "{C0D9DC68-E77C-4821-BC5D-253540866661}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS32.Infrastructure.Data", "AS32.Infrastructure.Data\AS32.Infrastructure.Data.csproj", "{C0D9DC68-E77C-4821-BC5D-253540866661}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Infrastructure.Repository", "AS32.Infrastructure.Repository\AS32.Infrastructure.Repository.csproj", "{084599FE-E702-4F78-B03E-CCF8C153F72C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS32.Infrastructure.Repository", "AS32.Infrastructure.Repository\AS32.Infrastructure.Repository.csproj", "{084599FE-E702-4F78-B03E-CCF8C153F72C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AS32.Infrastructure.Ioc", "AS32.Infrastructure.Ioc\AS32.Infrastructure.Ioc.csproj", "{C3F966EA-1456-4418-948A-387EDFB97887}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AS32.Infrastructure.Ioc", "AS32.Infrastructure.Ioc\AS32.Infrastructure.Ioc.csproj", "{C3F966EA-1456-4418-948A-387EDFB97887}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

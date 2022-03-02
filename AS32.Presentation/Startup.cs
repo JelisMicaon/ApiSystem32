@@ -1,7 +1,9 @@
+using AS32.Infrastructure.Data;
 using AS32.Infrastructure.Ioc;
 using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,7 @@ namespace AS32.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<SqlServerContext>(options => options.UseSqlServer(Configuration["Connections:ConnectionString"]));
             services.AddSwaggerGen(c => c.SwaggerDoc(Configuration["VersionApplication"], new OpenApiInfo { Title = Configuration["TitleApplication"], Version = Configuration["VersionApplication"] }));
         }
 

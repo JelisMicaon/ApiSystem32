@@ -1,19 +1,19 @@
-﻿using AS32.Domain.Core.Interfaces.Services.Faturamento.Cadastro;
+﻿using AS32.Domain.Core.Interfaces.Repository.Faturamento.Cadastro;
+using AS32.Domain.Core.Interfaces.Services.Faturamento.Cadastro;
 using AS32.Domain.Faturamento.Cadastro;
-using System.Collections.Generic;
+using AS32.Domain.Services.Services.Base;
 
 namespace AS32.Domain.Services.Services.Faturamento.Cadastro
 {
-    public class ServiceEntidade : IServiceEntidade
+    public class ServiceEntidade : ServiceBase<Entidade>, IServiceEntidade
     {
-        public void Add(Entidade entidade)
-        {
-            throw new System.NotImplementedException();
-        }
+        #region Construtores
+        public ServiceEntidade(IRepositoryEntidade repository) : base(repository)
+            => _repositoryEntidade = repository;
+        #endregion Construtores
 
-        public IEnumerable<Entidade> GetAll()
-        {
-            throw new System.NotImplementedException();
-        }
+        #region Propriedades
+        private readonly IRepositoryEntidade _repositoryEntidade;
+        #endregion Propriedades
     }
 }

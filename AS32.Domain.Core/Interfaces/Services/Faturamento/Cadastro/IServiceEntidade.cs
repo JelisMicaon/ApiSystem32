@@ -1,11 +1,8 @@
-﻿using AS32.Domain.Faturamento.Cadastro;
-using System.Collections.Generic;
+﻿using AS32.Domain.Core.Interfaces.Services.Base;
+using AS32.Domain.Faturamento.Cadastro;
 
 namespace AS32.Domain.Core.Interfaces.Services.Faturamento.Cadastro
 {
-    public interface IServiceEntidade
-    {
-        void Add(Entidade entidade);
-        IEnumerable<Entidade> GetAll();
-    }
+    public interface IServiceEntidade : IServiceBase<Entidade>
+    { }
 }

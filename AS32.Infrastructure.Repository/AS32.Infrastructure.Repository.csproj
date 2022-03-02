@@ -4,4 +4,9 @@
 		<TargetFramework>net5.0</TargetFramework>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\AS32.Domain.Core\AS32.Domain.Core.csproj" />
+	  <ProjectReference Include="..\AS32.Infrastructure.Data\AS32.Infrastructure.Data.csproj" />
+	</ItemGroup>
+
 </Project>

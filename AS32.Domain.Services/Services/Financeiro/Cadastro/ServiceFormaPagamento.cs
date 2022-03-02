@@ -1,19 +1,19 @@
-﻿using AS32.Domain.Core.Interfaces.Services.Financeiro.Cadastro;
+﻿using AS32.Domain.Core.Interfaces.Repository.Financeiro.Cadastro;
+using AS32.Domain.Core.Interfaces.Services.Financeiro.Cadastro;
 using AS32.Domain.Financeiro.Cadastro;
-using System.Collections.Generic;
+using AS32.Domain.Services.Services.Base;
 
 namespace AS32.Domain.Services.Services.Financeiro.Cadastro
 {
-    public class ServiceFormaPagamento : IServiceFormaPagamento
+    public class ServiceFormaPagamento : ServiceBase<FormaPagamento>, IServiceFormaPagamento
     {
-        public void Add(FormaPagamento formaPagamento)
-        {
-            throw new System.NotImplementedException();
-        }
+        #region Construtores
+        public ServiceFormaPagamento(IRepositoryFormaPagamento repository) : base(repository)
+            => _repositoryFormaPagamento = repository;
+        #endregion Construtores
 
-        public IEnumerable<FormaPagamento> GetAll()
-        {
-            throw new System.NotImplementedException();
-        }
+        #region Propriedades
+        private readonly IRepositoryFormaPagamento _repositoryFormaPagamento;
+        #endregion Propriedades
     }
 }

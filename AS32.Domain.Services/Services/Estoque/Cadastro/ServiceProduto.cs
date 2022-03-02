@@ -1,19 +1,19 @@
-﻿using AS32.Domain.Core.Interfaces.Services.Estoque.Cadastro;
+﻿using AS32.Domain.Core.Interfaces.Repository.Estoque.Cadastro;
+using AS32.Domain.Core.Interfaces.Services.Estoque.Cadastro;
 using AS32.Domain.Estoque.Cadastro;
-using System.Collections.Generic;
+using AS32.Domain.Services.Services.Base;
 
 namespace AS32.Domain.Services.Services.Estoque.Cadastro
 {
-    public class ServiceProduto : IServiceProduto
+    public class ServiceProduto : ServiceBase<Produto>, IServiceProduto
     {
-        public void Add(Produto produto)
-        {
-            throw new System.NotImplementedException();
-        }
+        #region Construtores
+        public ServiceProduto(IRepositoryProduto repository) : base(repository)
+            => _repositoryProduto = repository;
+        #endregion Construtores
 
-        public IEnumerable<Produto> GetAll()
-        {
-            throw new System.NotImplementedException();
-        }
+        #region Propriedades
+        private readonly IRepositoryProduto _repositoryProduto;
+        #endregion Propriedades
     }
 }
