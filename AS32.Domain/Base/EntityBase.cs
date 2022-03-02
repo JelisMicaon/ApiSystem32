@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace AS32.Domain.Base
 {
@@ -6,5 +7,7 @@ namespace AS32.Domain.Base
     {
         [Key]
         public long Id { get; set; }
+        public DateTime DataCadastro { get; set; }
+        public DateTime? DataAlteracao { get; set; }
     }
 }
