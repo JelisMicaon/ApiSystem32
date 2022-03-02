@@ -1,17 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Autofac" Version="6.3.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Autofac" Version="6.3.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\AS32.Application\AS32.Application.csproj" />
-    <ProjectReference Include="..\AS32.Domain.Core\AS32.Domain.Core.csproj" />
-    <ProjectReference Include="..\AS32.Domain.Services\AS32.Domain.Services.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\AS32.Application\AS32.Application.csproj" />
+		<ProjectReference Include="..\AS32.Domain.Core\AS32.Domain.Core.csproj" />
+		<ProjectReference Include="..\AS32.Domain.Services\AS32.Domain.Services.csproj" />
+	</ItemGroup>
 
 </Project>
