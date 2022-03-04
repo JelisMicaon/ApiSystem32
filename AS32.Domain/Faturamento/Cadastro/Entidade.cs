@@ -5,11 +5,15 @@ namespace AS32.Domain.Faturamento.Cadastro
     public class Entidade : EntityBase
     {
         public string NomeCompleto { get; set; }
-        public string Nome { get => NomeProp; set => NomeProp = value.Split(' ')[0]; }
-        public string SobreNome { get => SobreNomeProp; set => SobreNomeProp = value.Split(' ')[1]; }
+        public string Nome { get => GetName(); set { } }
+        public string SobreNome { get => GetSobreNome(); set { } }
         public string Cpf { get; set; }
         public string Cnpj { get; set; }
-        private string NomeProp { get; set; }
-        private string SobreNomeProp { get; set; }
+
+        private string GetName()
+            => NomeCompleto.IndexOf(' ') != 0 ? NomeCompleto.Split()[0] : NomeCompleto;
+
+        private string GetSobreNome()
+            => NomeCompleto.IndexOf(' ') != 0 ? NomeCompleto.Split()[1] : NomeCompleto;
     }
 }

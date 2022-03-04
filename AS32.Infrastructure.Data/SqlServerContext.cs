@@ -23,7 +23,7 @@ namespace AS32.Infrastructure.Data
         #region Métodos Publicos
         public override int SaveChanges()
         {
-            foreach (EntityEntry entry in ChangeTracker.Entries().Where(entry => entry.GetType().GetProperty("DataCadastro") != null))
+            foreach (EntityEntry entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
             {
                 if (entry.State == EntityState.Added)
                     entry.Property("DataCadastro").CurrentValue = DateTime.Now;

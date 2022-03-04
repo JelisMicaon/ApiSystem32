@@ -2,6 +2,7 @@
 using AS32.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace AS32.Infrastructure.Repository.Repository.Base
 {
@@ -19,7 +20,8 @@ namespace AS32.Infrastructure.Repository.Repository.Base
         #region Métodos Publicos
         public virtual void Add(T obj)
         {
-            throw new NotImplementedException();
+            _context.Add(obj);
+            _context.SaveChanges();
         }
 
         public virtual void Dispose()
@@ -28,9 +30,7 @@ namespace AS32.Infrastructure.Repository.Repository.Base
         }
 
         public virtual IEnumerable<T> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+            => _context.Set<T>().ToList();
 
         public virtual T GetById(int id)
         {

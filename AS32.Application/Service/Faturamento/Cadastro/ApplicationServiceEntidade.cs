@@ -3,7 +3,6 @@ using AS32.Application.Interfaces.Faturamento.Cadastro;
 using AS32.Domain.Core.Interfaces.Services.Faturamento.Cadastro;
 using AS32.Domain.Faturamento.Cadastro;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace AS32.Application.Service.Faturamento.Cadastro
 {
@@ -19,13 +18,10 @@ namespace AS32.Application.Service.Faturamento.Cadastro
         #endregion Propriedades
 
         #region Métodos Publicos
-        public async Task<EntidadeDto> Add()
-        {
-            _serviceEntidade.Add(new Entidade());
-            return new EntidadeDto();
-        }
+        public void Add(EntidadeDto entidade)
+            => _serviceEntidade.Add(new Entidade());
 
-        public async Task<IEnumerable<EntidadeDto>> GetAll()
+        public IEnumerable<EntidadeDto> GetAll()
         {
             var retorno = _serviceEntidade.GetAll();
             return new List<EntidadeDto>();

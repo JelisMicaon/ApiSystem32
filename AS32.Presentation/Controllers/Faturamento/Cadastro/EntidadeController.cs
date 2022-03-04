@@ -1,11 +1,10 @@
 ﻿using AS32.Application.Interfaces.Faturamento.Cadastro;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace AS32.Presentation.Controllers.Faturamento.Cadastro
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class EntidadeController : Controller
     {
         #region Contrutores
@@ -19,12 +18,12 @@ namespace AS32.Presentation.Controllers.Faturamento.Cadastro
 
         #region Métodos Publicos
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public IActionResult GetAll()
             => new JsonResult(_contexto.GetAll());
 
         [HttpPost]
-        public async Task<IActionResult> Add()
-            => new JsonResult(_contexto.Add());
+        public void Add()
+            => _contexto.Add();
         #endregion Métodos Publicos
     }
 }

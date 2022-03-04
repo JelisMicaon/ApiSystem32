@@ -1,13 +1,12 @@
 ﻿using AS32.Application.Dto.Faturamento.Cadastro;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace AS32.Application.Interfaces.Faturamento.Cadastro
 {
     public interface IApplicationServiceEntidade
     {
-        Task<IEnumerable<EntidadeDto>> GetAll();
+        IEnumerable<EntidadeDto> GetAll();
 
-        Task<EntidadeDto> Add();
+        void Add(EntidadeDto entidade);
     }
 }

@@ -15,5 +15,13 @@ namespace AS32.Infrastructure.Repository.Faturamento.Cadastro
         #region Propriedades
         private SqlServerContext _context;
         #endregion Propriedades
+
+        #region Métodos Publicos
+        new public void Add(Entidade entidade)
+        {
+            _context.Add(entidade);
+            _context.SaveChanges();
+        }
+        #endregion Métodos Publicos
     }
 }
