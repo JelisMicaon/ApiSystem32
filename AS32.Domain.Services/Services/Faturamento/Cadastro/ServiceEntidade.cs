@@ -18,11 +18,7 @@ namespace AS32.Domain.Services.Services.Faturamento.Cadastro
 
         #region Métodos Publicos
         new public void Add(Entidade entidade)
-        {
-            var teste = new Entidade();
-            teste.NomeCompleto = "Jonas Maciel";
-            _repositoryEntidade.Add(entidade);
-        }
+            => _repositoryEntidade.Add(entidade);
         #endregion Métodos Publicos
     }
 }

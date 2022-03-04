@@ -5,6 +5,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="AutoMapper" Version="11.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<ProjectReference Include="..\AS32.Application.Dto\AS32.Application.Dto.csproj" />
 		<ProjectReference Include="..\AS32.Domain.Core\AS32.Domain.Core.csproj" />
 	</ItemGroup>

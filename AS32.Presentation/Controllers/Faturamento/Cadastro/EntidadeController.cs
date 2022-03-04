@@ -1,4 +1,5 @@
-﻿using AS32.Application.Interfaces.Faturamento.Cadastro;
+﻿using AS32.Application.Dto.Faturamento.Cadastro;
+using AS32.Application.Interfaces.Faturamento.Cadastro;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AS32.Presentation.Controllers.Faturamento.Cadastro
@@ -22,8 +23,8 @@ namespace AS32.Presentation.Controllers.Faturamento.Cadastro
             => new JsonResult(_contexto.GetAll());
 
         [HttpPost]
-        public void Add()
-            => _contexto.Add();
+        public void Add(EntidadeDto entidade)
+            => _contexto.Add(entidade);
         #endregion Métodos Publicos
     }
 }

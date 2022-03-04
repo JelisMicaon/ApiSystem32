@@ -11,9 +11,9 @@ namespace AS32.Domain.Faturamento.Cadastro
         public string Cnpj { get; set; }
 
         private string GetName()
-            => NomeCompleto.IndexOf(' ') != 0 ? NomeCompleto.Split()[0] : NomeCompleto;
+            => NomeCompleto is not null && NomeCompleto.IndexOf(' ') != 0 ? NomeCompleto.Split()[0] : NomeCompleto ?? string.Empty;
 
         private string GetSobreNome()
-            => NomeCompleto.IndexOf(' ') != 0 ? NomeCompleto.Split()[1] : NomeCompleto;
+            => NomeCompleto is not null && NomeCompleto.IndexOf(' ') != 0 ? NomeCompleto.Split()[1] : NomeCompleto ?? string.Empty;
     }
 }
