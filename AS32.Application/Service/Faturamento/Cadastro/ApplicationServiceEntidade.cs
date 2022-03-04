@@ -15,8 +15,8 @@ namespace AS32.Application.Service.Faturamento.Cadastro
         #endregion Contrutores
 
         #region Propriedades
-        private IServiceEntidade _serviceEntidade;
-        private IMapper _mapper;
+        private readonly IServiceEntidade _serviceEntidade;
+        private readonly IMapper _mapper;
         #endregion Propriedades
 
         #region Métodos Publicos
