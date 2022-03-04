@@ -1,13 +1,10 @@
-using AS32.Infrastructure.Data;
 using AS32.Infrastructure.Ioc;
 using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 
 namespace AS32.Presentation
 {
@@ -26,8 +23,7 @@ namespace AS32.Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<SqlServerContext>(options => options.UseSqlServer(Configuration["Connections:ConnectionString"]));
-            services.AddSwaggerGen(c => c.SwaggerDoc(Configuration["VersionApplication"], new OpenApiInfo { Title = Configuration["TitleApplication"], Version = Configuration["VersionApplication"] }));
+            services.LoadIoc(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -46,7 +42,7 @@ namespace AS32.Presentation
         }
 
         public void ConfigureContainer(ContainerBuilder builder)
-            => builder.RegisterModule(new InfrastructureConfigureIoc());
+            => builder.RegisterModule(new InfrastructureConfigureAutoFacIoc());
         #endregion Métodos Publicos
     }
 }

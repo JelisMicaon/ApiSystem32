@@ -20,7 +20,7 @@ using Autofac;
 
 namespace AS32.Infrastructure.Ioc
 {
-    public class InfrastructureConfigureIoc : Module
+    public class InfrastructureConfigureAutoFacIoc : Module
     {
         #region Métodos Override
         protected override void Load(ContainerBuilder builder)
