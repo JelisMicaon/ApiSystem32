@@ -1,6 +1,7 @@
 ﻿using AS32.Domain.Core.Interfaces.Repository.Base;
 using AS32.Domain.Core.Interfaces.Services.Base;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AS32.Domain.Services.Services.Base
 {
@@ -16,14 +17,14 @@ namespace AS32.Domain.Services.Services.Base
         #endregion Propriedades
 
         #region Métodos Publicos
-        public virtual void Add(T entity)
-            => _repository.Add(entity);
+        public async virtual Task<long?> Add(T entity)
+            => await _repository.Add(entity);
 
-        public virtual void Dispose()
-            => _repository.Dispose();
+        public async virtual ValueTask Dispose()
+            => await _repository.Dispose();
 
-        public virtual IEnumerable<T> GetAll()
-            => _repository.GetAll();
+        public async virtual Task<IEnumerable<T>> GetAll()
+            => await _repository.GetAll();
 
         public virtual T GetById(int id)
             => _repository.GetById(id);

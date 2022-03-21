@@ -1,12 +1,17 @@
-﻿using AS32.Application.Dto.Faturamento.Cadastro;
+﻿using AS32.Application.Dto.Base;
+using AS32.Application.Dto.Faturamento.Cadastro;
 using AS32.Application.Interfaces.Faturamento.Cadastro;
+using AS32.Presentation.Controllers.Base;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AS32.Presentation.Controllers.Faturamento.Cadastro
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class EntidadeController : Controller
+    public class EntidadeController : BaseController
     {
         #region Contrutores
         public EntidadeController(IApplicationServiceEntidade contexto)
@@ -19,12 +24,18 @@ namespace AS32.Presentation.Controllers.Faturamento.Cadastro
 
         #region Métodos Publicos
         [HttpGet]
-        public IActionResult GetAll()
-            => new JsonResult(_contexto.GetAll());
+        public async Task<ActionResult<IEnumerable<EntidadeDto>>> GetAll()
+            => Result(await _contexto.GetAll());
 
         [HttpPost]
-        public void Add(EntidadeDto entidade)
-            => _contexto.Add(entidade);
+        public async Task<ActionResult<EntityBase>> Add(EntidadeDto entidade)
+        {
+            long? idProduct = await _contexto.Add(entidade);
+            if (idProduct is not null)
+                return Result(new EntityBase() { Id = Convert.ToInt64(idProduct) });
+            else
+                return Result();
+        }
         #endregion Métodos Publicos
     }
 }

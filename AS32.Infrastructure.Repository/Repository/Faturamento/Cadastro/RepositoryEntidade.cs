@@ -2,6 +2,7 @@
 using AS32.Domain.Faturamento.Cadastro;
 using AS32.Infrastructure.Data;
 using AS32.Infrastructure.Repository.Repository.Base;
+using System.Threading.Tasks;
 
 namespace AS32.Infrastructure.Repository.Faturamento.Cadastro
 {
@@ -17,10 +18,20 @@ namespace AS32.Infrastructure.Repository.Faturamento.Cadastro
         #endregion Propriedades
 
         #region Métodos Publicos
-        new public void Add(Entidade entidade)
+        new public async Task<long?> Add(Entidade entidade)
         {
-            _context.Add(entidade);
-            _context.SaveChanges();
+            long? response = null;
+            try
+            {
+                _context.Add(entidade);
+                if (await _context.SaveChangesAsync() > 0)
+                    response = entidade.Id;
+            }
+            catch
+            {
+                await Dispose();
+            }
+            return response;
         }
         #endregion Métodos Publicos
     }

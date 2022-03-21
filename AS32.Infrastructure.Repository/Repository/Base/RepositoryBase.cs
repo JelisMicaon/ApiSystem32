@@ -1,8 +1,9 @@
 ﻿using AS32.Domain.Core.Interfaces.Repository.Base;
 using AS32.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 
 namespace AS32.Infrastructure.Repository.Repository.Base
 {
@@ -18,19 +19,27 @@ namespace AS32.Infrastructure.Repository.Repository.Base
         #endregion Propriedades
 
         #region Métodos Publicos
-        public virtual void Add(T obj)
+        public async virtual Task<long?> Add(T obj)
         {
-            _context.Add(obj);
-            _context.SaveChanges();
+            long? response = null;
+            try
+            {
+                _context.Add(obj);
+                if (await _context.SaveChangesAsync() > 0)
+                    response = 1;
+            }
+            catch
+            {
+                await Dispose();
+            }
+            return response;
         }
 
-        public virtual void Dispose()
-        {
-            throw new NotImplementedException();
-        }
+        public async virtual ValueTask Dispose()
+            => await _context.DisposeAsync();
 
-        public virtual IEnumerable<T> GetAll()
-            => _context.Set<T>().ToList();
+        public async virtual Task<IEnumerable<T>> GetAll()
+            => await _context.Set<T>().ToListAsync();
 
         public virtual T GetById(int id)
         {

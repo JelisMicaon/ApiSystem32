@@ -4,6 +4,7 @@ using AS32.Domain.Core.Interfaces.Services.Faturamento.Cadastro;
 using AS32.Domain.Faturamento.Cadastro;
 using AutoMapper;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AS32.Application.Service.Faturamento.Cadastro
 {
@@ -20,11 +21,11 @@ namespace AS32.Application.Service.Faturamento.Cadastro
         #endregion Propriedades
 
         #region Métodos Publicos
-        public void Add(EntidadeDto entidade)
-            => _serviceEntidade.Add(_mapper.Map<Entidade>(new EntidadeDto()));
+        public async Task<long?> Add(EntidadeDto entidade)
+            => await _serviceEntidade.Add(_mapper.Map<Entidade>(entidade));
 
-        public IEnumerable<EntidadeDto> GetAll()
-            => _mapper.Map<List<EntidadeDto>>(_serviceEntidade.GetAll());
+        public async Task<IEnumerable<EntidadeDto>> GetAll()
+            => _mapper.Map<List<EntidadeDto>>(await _serviceEntidade.GetAll());
         #endregion Métodos Publicos
     }
 }
